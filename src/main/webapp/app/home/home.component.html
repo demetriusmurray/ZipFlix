@@ -51,16 +51,14 @@
                         <span>
                             <div>{{searchResult.thumbnail}}</div>
                             <div>{{searchResult.videoId}}</div>
-                            <iframe width="280" height="158" src="https://www.youtube.com/embed/'{{videoId}}'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div><a href="https://www.youtube.com/embed/{{searchResult.videoId}}">here is the uri interpolated</a></div>
+                            <iframe width="280" height="158" [srcdoc]="searchResult.link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                             <!-- <span>{{searchResult.videoId}}</span> -->
                         </span>
                         <div class="text-right"> </div>
                     </span>
                 </div>
             </div>
-
-
-
 
 
             <div class="alert alert-warning" *ngSwitchCase="false">
@@ -71,20 +69,10 @@
                 <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
                 <a class="alert-link" routerLink="register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
             </div>
-        <p jhiTranslate="home.question">
-            If you have any question on JHipster:
-        </p>
 
-        <ul>
-            <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener" jhiTranslate="home.link.homepage">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener" jhiTranslate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener" jhiTranslate="home.link.bugtracker">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener" jhiTranslate="home.link.chat">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener" jhiTranslate="home.link.follow">follow @java_hipster on Twitter</a></li>
-        </ul>
 
         <p>
-            <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
+            <span jhiTranslate="home.like">If you like ZipFlix2, don't forget to give us a star on</span> <a href="https://github.com/demetrm/ZipFlix" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
         </p>
     </div>
 </div>
