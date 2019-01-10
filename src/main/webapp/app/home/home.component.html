@@ -17,21 +17,23 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/r-yxNNO1EI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <!-- this is the dropdown browse box -->
-                <div class="form-group">
-                    <label class ="Browser">
-                        Browser
-                    </label>
-                    <select id="browser" name="browser" class="form-control">
-                        <option value ="1" routerLink="browse/1" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Film & Animation </option>
-                        <option value ="2" >Autos & Vehicles</option>
-                        <option value= "10">Music</option>
-                        <option value ="15">Pets & Animals</option>
-                        <option value ="17">Sports</option>
-                        <option value ="18">Short Movies</option>
-                    </select>
-                    <button type="button" routerLink="browse/{{value}}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">browse!</button>
-                    <!-- the end of the dropdown browse box-->
+                <!-- &lt;!&ndash; this is the dropdown browse box &ndash;&gt;-->
+                <!-- <div class="form-group">--> 
+                    <!-- <label class ="Browser">-->
+                        <!-- Browser -->
+                    <!-- </label> -->
+                    <!-- <select id="browser" name="browser" class="form-control"> -->
+                        <!-- <option value ="1" routerLink="browse/1" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Film & Animation </option> -->
+                        <!-- <option value ="2" >Autos & Vehicles</option> -->
+                        <!-- <option value= "10">Music</option> -->
+                        <!-- <option value ="15">Pets & Animals</option> -->
+                        <!-- <option value ="17">Sports</option> -->
+                        <!-- <option value ="18">Short Movies</option> -->
+                    <!-- </select> -->
+                    <!-- <button type="button" routerLink="browse/{{value}}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">browse!</button> -->
+                <!-- </div> --> 
+                <!-- &lt;!&ndash; the end of the dropdown browse box&ndash;&gt -->
+            </div>
         <span>
             <li>
                 <p>
@@ -40,20 +42,18 @@
                 </p>
             </li>
         </span>
-                </div>
                 <!--<div>-->
                     <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/r-yxNNO1EI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                 <!--</div>-->
-            </div>
             <div *ngSwitchCase="true">
                 <div class="grid grid-pad" *ngIf="topTrendingResults">
                     <span *ngFor="let searchResult of topTrendingResults ;trackBy: trackId" class="col-14">
                         <span>
-                            <div>{{searchResult.thumbnail}}</div>
-                            <div>{{searchResult.videoId}}</div>
-                            <div><a href="https://www.youtube.com/embed/{{searchResult.videoId}}">here is the uri interpolated</a></div>
-                            <iframe width="280" height="158" [srcdoc]="searchResult.link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                            <!-- <span>{{searchResult.videoId}}</span> -->
+                            <div id="vid" routerLink="video" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                                <div>{{searchResult.thumbnail}}</div>
+                                <!-- <div><a href="https://www.youtube.com/embed/{{searchResult.videoId}}">here is the uri interpolated</a></div> -->
+                                <iframe width="280" height="158" [src]="searchResult.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                            </div>
                         </span>
                         <div class="text-right"> </div>
                     </span>
@@ -74,6 +74,6 @@
         <p>
             <span jhiTranslate="home.like">If you like ZipFlix2, don't forget to give us a star on</span> <a href="https://github.com/demetrm/ZipFlix" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
         </p>
+        </div>
     </div>
-</div>
 </div>
