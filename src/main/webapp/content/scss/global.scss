@@ -249,3 +249,15 @@ global grid (horizontal)
     text-align: center;
     padding: 10px;
 }
+
+[class*='col-'] {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
