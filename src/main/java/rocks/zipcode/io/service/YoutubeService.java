@@ -78,7 +78,7 @@ public class YoutubeService {
         try {
             YouTube.Search.List search = buildSearch();
             search.setChannelId("UCtg5C-d_3rPUgMaxr285mQQ");
-            search.setMaxResults(5L);
+            search.setMaxResults(6L);
 
             SearchListResponse response = search.execute();
             List<SearchResult> responseList = response.getItems();
@@ -101,7 +101,7 @@ public class YoutubeService {
         YouTube.Search.List search = getYoutube().search().list("id,snippet");
         search.setKey(getAPIKey());
         search.setType("video");
-        search.setFields("items(id/videoId,snippet/title)");
+        search.setFields("items(id/videoId,snippet(title,description))");
         search.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
         return search;
     }
@@ -149,6 +149,7 @@ public class YoutubeService {
         sr.setId(2L);
         sr.setVideoId(googleResult.getId().getVideoId());
         sr.setThumbnail(googleResult.getSnippet().getTitle());
+        sr.setCategory(googleResult.getSnippet().getDescription());
         sr.setLink("https://www.youtube.com/embed/" + googleResult.getId().getVideoId()+"");
         return sr;
     }
