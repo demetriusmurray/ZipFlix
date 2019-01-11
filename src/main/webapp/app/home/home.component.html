@@ -52,12 +52,8 @@
                     <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/r-yxNNO1EI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                 <!--</div>-->
             <div *ngSwitchCase="true">
-                <style>
-                    .grid-pad {
-                        display: grid;
-                        grid-column-gap: 50px;
-                        grid-template-columns: auto auto auto;
 
+<<<<<<< HEAD
                         padding: 10px;
                     }
 
@@ -66,9 +62,26 @@
                     <h3><strong>Top Trending Results</strong></h3></div>
 
                     <div class="grid grid-video" *ngIf="topTrendingResults">
+=======
+                <div class="grid grid-pad" *ngIf="topTrendingResults">
+                    <h3><strong>Top Trending Results</strong></h3>
+                </div>
+                    <div class="grid grid-top " *ngIf="topTrendingResults">
+                        <style>
+                            .grid-top {
+                                display: grid;
+                                grid-column-gap: 50px;
+                                grid-template-columns: auto auto auto;
+                                background-color: #2196F3;
+                                padding: 10px;
+                            }
+
+                        </style>
+
+>>>>>>> f37a103d42b6634fec4086a381e2033569449c53
                     <span *ngFor="let searchResult of topTrendingResults ;trackBy: trackId" class="col-14">
                         <span>
-                            <div id="vid" routerLink="video" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            <div id="vid" routerLink="video/{{searchResult.videoId}}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                                 <div>{{searchResult.thumbnail}}</div>
                                 <!-- <div><a href="https://www.youtube.com/embed/{{searchResult.videoId}}">here is the uri interpolated</a></div> -->
                                 <iframe width="280" height="158"  [src]="searchResult.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
