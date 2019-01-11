@@ -234,3 +234,17 @@ global grid (horizontal)
     padding-right: 0;
 }
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+.grid-pad {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto auto;
+
+    padding: 10px;
+}
+.grid-video {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,14 +1,15 @@
 <div class="row">
+
     <!-- <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>
     </div> -->
-    <div class="col-md-3">
-        <img src='https://zipflix.files.wordpress.com/2018/04/cropped-zipflix-logo-11-e15240068982131.jpg?w=240' width="375" height="375">
+    <div class="col-4" >
+        <img src='https://zipflix.files.wordpress.com/2018/04/cropped-zipflix-logo-11-e15240068982131.jpg?w=240' width="375" height="300" align="center">
         </div>
-    <div class="col-md-9">
+    <div class="col-md-4">
        <!-- <h1 class="display-4" jhiTranslate="home.title">WELCOME TO ZIPFLIX2</h1> -->
         <h1>ZIP FLIX!!</h1>
-        <p class="lead" jhiTranslate="home.subtitle">Home</p>
+        <p class="lead" jhiTranslate="home.subtitle">Home</p></div>
         <div [ngSwitch]="isAuthenticated()">
 
 
@@ -16,7 +17,8 @@
 
                 <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
                     translateValues="{username: '{{account.firstName}}'}"> Welcome back "{{account.firstName}}". </span>
-                <div>
+            </div>
+                <div >
 
 
                 <p>
@@ -59,16 +61,11 @@
                         padding: 10px;
                     }
 
-                    /*.grid-item {*/
-                        /*background-color: rgba(255, 255, 255, 0.8);*/
-                        /*border: 1px solid rgba(0, 0, 0, 0.8);*/
-                        /*padding: 20px;*/
-                        /*font-size: 30px;*/
-                        /*text-align: center;*/
-                    /*}*/
                 </style>
                 <div class="grid grid-pad" *ngIf="topTrendingResults">
-                    <h3><strong>Top Trending Results</strong></h3>
+                    <h3><strong>Top Trending Results</strong></h3></div>
+
+                    <div class="grid grid-video" *ngIf="topTrendingResults">
                     <span *ngFor="let searchResult of topTrendingResults ;trackBy: trackId" class="col-14">
                         <span>
                             <div id="vid" routerLink="video" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
@@ -77,15 +74,17 @@
                                 <iframe width="280" height="158"  [src]="searchResult.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </span>
-                        <div class="text-right"> </div>
                     </span>
                 </div>
             </div>
+
                 <div class="alert alert-warning" *ngSwitchCase="false">
+                    <div class="text-right"> </div>
                     <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
                     <a class="alert-link" routerLink="register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
                 </div>
         </div>
     </div>
-</div>
-</div>
+
+
+
