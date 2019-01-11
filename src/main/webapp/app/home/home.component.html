@@ -11,16 +11,11 @@
         <h1>ZIP FLIX!!</h1>
         <p class="lead" jhiTranslate="home.subtitle">Home</p></div>
         <div [ngSwitch]="isAuthenticated()">
-
-
             <div class="alert alert-success" *ngSwitchCase="true">
-
                 <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
                     translateValues="{username: '{{account.firstName}}'}"> Welcome back "{{account.firstName}}". </span>
             </div>
-                <div >
-
-
+                <div>
                 <p>
                     <input type="text" class = "glyphicon-search" [(ngModel)]="searchTerm" placeholder="Search Video" >
                     <button (click)="search(searchTerm)" type="button" routerLink="search-result/{{searchTerm}}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">find </button>
@@ -52,33 +47,11 @@
                     <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/r-yxNNO1EI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
                 <!--</div>-->
             <div *ngSwitchCase="true">
-
-<<<<<<< HEAD
-                        padding: 10px;
-                    }
-
-                </style>
                 <div class="grid grid-pad" *ngIf="topTrendingResults">
                     <h3><strong>Top Trending Results</strong></h3></div>
 
                     <div class="grid grid-video" *ngIf="topTrendingResults">
-=======
-                <div class="grid grid-pad" *ngIf="topTrendingResults">
-                    <h3><strong>Top Trending Results</strong></h3>
-                </div>
-                    <div class="grid grid-top " *ngIf="topTrendingResults">
-                        <style>
-                            .grid-top {
-                                display: grid;
-                                grid-column-gap: 50px;
-                                grid-template-columns: auto auto auto;
-                                background-color: #2196F3;
-                                padding: 10px;
-                            }
 
-                        </style>
-
->>>>>>> f37a103d42b6634fec4086a381e2033569449c53
                     <span *ngFor="let searchResult of topTrendingResults ;trackBy: trackId" class="col-14">
                         <span>
                             <div id="vid" routerLink="video/{{searchResult.videoId}}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
@@ -90,7 +63,6 @@
                     </span>
                 </div>
             </div>
-
                 <div class="alert alert-warning" *ngSwitchCase="false">
                     <div class="text-right"> </div>
                     <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
